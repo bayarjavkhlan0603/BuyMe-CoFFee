@@ -11,5 +11,4 @@ export default function () {
   } else {
     return <EmailPasswordCard />;
   }
-  return <div className="flex justify-center items-center h-full"></div>;
 }
