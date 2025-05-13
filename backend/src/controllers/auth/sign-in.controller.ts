@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { prisma } from "../../../utils/prisma";
-import { compare, compareSync } from "bcrypt";
+import { compareSync } from "bcrypt";
 import jwt from "jsonwebtoken";
 import { secret_key } from "../../../utils/env";
 

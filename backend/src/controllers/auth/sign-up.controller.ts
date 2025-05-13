@@ -3,7 +3,7 @@ import { prisma } from "../../../utils/prisma";
 import bcrypt from "bcrypt";
 
 // username dawtagdahgvi bhiig shalgah
-const chekUser = async (req: Request, res: Response) => {
+export const chekUser = async (req: Request, res: Response) => {
   const { username } = req.body;
   try {
     const user = await prisma.user.findUnique({
