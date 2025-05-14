@@ -68,7 +68,7 @@ export const ProfileAccount = () => {
   };
 
   return (
-    <Card className="w-[510px]">
+    <Card className="w-[510px] border-0 shadow-none">
       <Form {...form}>
         <form
           className="flex flex-col gap-6"
