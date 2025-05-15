@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
@@ -14,30 +12,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useRouter } from "next/navigation";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { useRouter } from "next/navigation";
 
-const formSchema = z.object({
-  email: z.string().email({ message: "please enter a valid email" }),
-  password: z
-    .string()
-    .min(8, { message: "please should be more than 8 letters" }),
-});
-import { useRouter } from "next/navigation";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
@@ -134,12 +113,6 @@ export const EmailPasswordCard = ({ username }: { username: string }) => {
           </form>
         </Form>
       </Card>
-      <Button
-        onClick={handleClick}
-        className="text-black text-[14px] bg-[#F4F4F5] absolute right-20 top-8"
-      >
-        Login
-      </Button>
       <Button
         onClick={handleClick}
         className="text-black text-[14px] bg-[#F4F4F5] absolute right-20 top-8"
