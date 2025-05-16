@@ -1,7 +1,5 @@
 "use client";
 
-import * as React from "react";
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { z } from "zod";
+import { any, z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -25,6 +23,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { useRef } from "react";
+import axios from "axios";
 
 const formSchema = z.object({
   email: z.string().email({ message: "please enter a valid email" }),
@@ -42,8 +42,24 @@ export const EmailPasswordCard = ({ username }: { username: string }) => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values.email, values.password);
+  const onSubmit = async (value: z.infer<typeof formSchema>) => {
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/user`,
+        {
+          email: value.email,
+          password: value.password,
+        }
+      );
+
+      localStorage.setItem("cookie", response.data.cookie);
+      router.push("/profile");
+
+      console.log(response, "response");
+    } catch (error) {
+      console.log(error);
+    }
+    console.log(value.email, value.password);
   };
 
   const router = useRouter();
@@ -106,7 +122,7 @@ export const EmailPasswordCard = ({ username }: { username: string }) => {
               />
             </CardContent>
             <CardFooter className="">
-              <Button onClick={handleClickProfile} className="w-full">
+              <Button type="submit" className="w-full">
                 Continue
               </Button>
             </CardFooter>

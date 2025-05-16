@@ -90,7 +90,7 @@ export const ProfileAccount = () => {
                 <FormItem>
                   <FormLabel>Select country</FormLabel>
                   <FormControl>
-                    <Select>
+                    <Select onValueChange={field.onChange}>
                       <SelectTrigger className="w-full" id="framework">
                         <SelectValue placeholder="Select" />
                       </SelectTrigger>
@@ -160,7 +160,7 @@ export const ProfileAccount = () => {
                     <FormItem>
                       <FormLabel>Expires</FormLabel>
                       <FormControl>
-                        <Select>
+                        <Select onValueChange={field.onChange}>
                           <SelectTrigger className="w-full" id="framework">
                             <SelectValue placeholder="Month" />
                           </SelectTrigger>
@@ -185,7 +185,7 @@ export const ProfileAccount = () => {
                     <FormItem>
                       <FormLabel>Year</FormLabel>
                       <FormControl>
-                        <Select>
+                        <Select onValueChange={field.onChange}>
                           <SelectTrigger className="w-full" id="framework">
                             <SelectValue placeholder="Year" />
                           </SelectTrigger>
