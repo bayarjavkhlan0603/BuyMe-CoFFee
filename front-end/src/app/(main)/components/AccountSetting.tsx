@@ -54,7 +54,7 @@ export const AccountSetings = () => {
 
   return (
     <ScrollArea className="h-165">
-      <div className="w-[650px] p-6 pb-[59px] flex flex-col gap-8">
+      <div className="w-[650px] p-6 flex flex-col gap-8">
         <p className="text-2xl font-semibold">My account</p>
         <Card>
           <Form {...form}>

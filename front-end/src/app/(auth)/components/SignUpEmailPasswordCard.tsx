@@ -64,10 +64,6 @@ export const EmailPasswordCard = ({ username }: { username: string }) => {
 
   const router = useRouter();
 
-  const handleClickProfile = () => {
-    router.push("/profile");
-  };
-
   const handleClick = () => {
     router.push("/login");
   };
