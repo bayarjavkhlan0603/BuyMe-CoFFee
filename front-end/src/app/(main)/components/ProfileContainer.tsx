@@ -22,6 +22,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Camera } from "lucide-react";
 
 const profileSchema = z.object({
   photo: z.string().min(1, { message: "Please enter image" }),
@@ -73,7 +74,7 @@ export const ProfileContainer = ({
                     <FormControl>
                       <Input
                         type="file"
-                        className="w-40 h-40 rounded-[9999px] outline-dashed"
+                        className="w-40 h-40 rounded-full border-dashed border-2"
                         {...field}
                       />
                     </FormControl>
