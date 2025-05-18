@@ -30,6 +30,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 
 const profileSchema = z.object({
   country: z.string().min(1, { message: "Select country to continue" }),
@@ -65,7 +66,10 @@ export const ProfileAccount = () => {
       values.year,
       values.cvc
     );
+    router.push("/home-page");
   };
+
+  const router = useRouter();
 
   return (
     <Card className="w-[510px] border-0 shadow-none">
@@ -220,7 +224,7 @@ export const ProfileAccount = () => {
             </div>
           </CardContent>
           <CardFooter className="flex justify-end">
-            <Button>Continue</Button>
+            <Button type="submit">Continue</Button>
           </CardFooter>
         </form>
       </Form>
