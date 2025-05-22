@@ -53,7 +53,7 @@ export const AccountSetings = () => {
   const onSubmit = (values: z.infer<typeof profileSchema>) => {};
 
   return (
-    <ScrollArea className="h-165">
+    <ScrollArea className="h-165 flex justify-center">
       <div className="w-[650px] p-6 pb-[59px] flex flex-col gap-8">
         <p className="text-2xl font-semibold">My account</p>
         <Card>
