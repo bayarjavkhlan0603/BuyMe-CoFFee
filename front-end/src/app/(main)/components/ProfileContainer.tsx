@@ -23,6 +23,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Camera } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
 
 const profileSchema = z.object({
   photo: z.string().min(1, { message: "Please enter image" }),
@@ -104,9 +105,9 @@ export const ProfileContainer = ({
                   <FormItem>
                     <FormLabel>About</FormLabel>
                     <FormControl>
-                      <Input
+                      <Textarea
                         placeholder="Write about yourself here"
-                        className="h-[131px]"
+                        className="resize-none h-[131px]"
                         {...field}
                       />
                     </FormControl>
